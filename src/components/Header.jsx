@@ -29,14 +29,17 @@ export const Header = () => {
             <a
               href={value.url}
               key={key}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sm  leading-6 text-gray-900 transition-colors duration-300  hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
             >
               {value.name}
             </a>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a
+            href="#"
+            className="text-sm font-semibold leading-6 text-gray-900 "
+          >
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -73,7 +76,7 @@ export const Header = () => {
                   <a
                     href={value.url}
                     key={key}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     {value.name}
                   </a>

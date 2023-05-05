@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Menu } from "../Hooks/custom";
 
 export const Footer = () => {
   return (
@@ -37,7 +38,16 @@ export const Footer = () => {
 
             <div className="flex mt-4 md:m-0">
               <div className="-mx-4">
-                <a
+                {Menu.map((value, key) => (
+                  <a
+                    href={value.url}
+                    key={key}
+                    className="px-4 text-sm   text-gray-900 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
+                  >
+                    {value.name}
+                  </a>
+                ))}
+                {/* <a
                   href="#"
                   className="px-4 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
                 >
@@ -60,7 +70,7 @@ export const Footer = () => {
                   className="px-4 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
                 >
                   Contact
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
