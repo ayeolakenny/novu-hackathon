@@ -4,9 +4,19 @@ import { ToggleMenu } from "./Buttons";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(!false);
+  const [scroll, setscroll] = useState(false);
+
+  function scrollHandler() {
+    if (window.scrollY >= 20) {
+      setscroll(true);
+    }
+    setscroll(false);
+  }
+
+  window.addEventListener("scroll", scrollHandler);
 
   return (
-    <header className="bg-white">
+    <header className={scroll ? "bg-white" : "bg-transparent"}>
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
