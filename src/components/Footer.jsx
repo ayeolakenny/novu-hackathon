@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Menu } from "../Hooks/custom";
+import {Button} from "./Buttons"
 
 export const Footer = () => {
   return (

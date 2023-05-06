@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Button } from "./Buttons";
 
 export const HeroHeader = () => {
   return (
@@ -9,10 +10,14 @@ export const HeroHeader = () => {
             Discover Your Next Property: Check Out Our
             <span className="text-blue-600 dark:text-blue-500"> Listings</span>
           </h1>
-          <p className="text-2xl  font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-            Here at Flowbite we focus on markets where technology, innovation,
-            and capital can unlock long-term value and drive economic growth.
+          <p className="text-2xl  font-normal text-gray-400 lg:text-xl  font-[Raleway] ">
+            Browse through our extensive database of properties and find your
+            perfect match. Start your search now and discover your next home
+            sweet home.
           </p>
+          <div className="my-8">
+            <Button name="Get Started" />
+          </div>
         </div>
         <div className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
           <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
