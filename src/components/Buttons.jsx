@@ -1,9 +1,23 @@
 import { Fragment } from "react";
 import PropTypes from "prop-types";
 
-export const Button = () => {
-  <Fragment></Fragment>;
-};
+export const Button = ({ fancy, handleEvent, name }) => (
+  <Fragment>
+    {fancy ? (
+      <button
+        type="button"
+        className="text-amber-400 hover:text-white border border-amber-400 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-amber-300 dark:text-amber-300 dark:hover:text-white dark:hover:bg-amber-400 dark:focus:ring-amber-900 bg-clip-padding backdrop-filter backdrop-blur-sm"
+        onClick={handleEvent}
+      >
+        {name}
+      </button>
+    ) : (
+      <button className="w-full px-5 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto  focus:outline-none bg-blue-600 rounded-lg hover:bg-blue-500 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+        {name}
+      </button>
+    )}
+  </Fragment>
+);
 export const ToggleMenu = ({ handleEvent, isOpen }) => {
   return (
     <Fragment>
@@ -59,4 +73,9 @@ export const ToggleMenu = ({ handleEvent, isOpen }) => {
 ToggleMenu.propTypes = {
   handleEvent: PropTypes.func,
   isOpen: PropTypes.bool,
+};
+Button.propTypes = {
+  handleEvent: PropTypes.func,
+  fancy: PropTypes.bool,
+  name: PropTypes.string,
 };

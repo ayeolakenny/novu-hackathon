@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu } from "../Hooks/custom";
+import { Menu } from "../data/custom";
 import { ToggleMenu } from "./Buttons";
 
 export const Header = () => {
