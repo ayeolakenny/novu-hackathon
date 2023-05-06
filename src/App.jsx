@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout";
-import { Home } from "./components/Home";
+import { Home } from "./pages/Home";
 
 function App() {
   return (
