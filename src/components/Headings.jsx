@@ -4,7 +4,7 @@ import { Button } from "./Buttons";
 export const HeroHeader = () => {
   return (
     <Fragment>
-      <div className="pt-40 flex  mx-16 h-screen">
+      <div className="pt-40 lg:grid grid-cols-2 mx-16 h-screen ">
         <div className="container ">
           <h1 className="py-2 mb-4 text-2xl font-extrabold  tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white leading-loose">
             Discover Your Next Property: Check Out Our
@@ -19,7 +19,7 @@ export const HeroHeader = () => {
             <Button name="Get Started" />
           </div>
         </div>
-        <div className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
+        <div className=" hidden lg:flex items-center justify-center w-full mt-3 lg:mt-0 lg:w-1/2 ">
           <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
             <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80"></div>
             <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">

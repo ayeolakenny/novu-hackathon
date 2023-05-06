@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 
+
 export const Card = () => {
   return (
     <Fragment>
@@ -47,28 +48,40 @@ export const FancyCard = () => {
                 alt=""
                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg "
               />
-              <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 hover:animate-pulse"></div>
+              <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10 "></div>
             </div>
           </div>
-          <div className="flex flex-col ">
+          <div className="flex flex-col font-[Raleway]">
             {/* little gossip */}
-            <div className="text-xs">Available</div>
+            <div className="text-xs py-3">Available</div>
             <div className="mt-4">
-              <h1 className="text-sm text-black font-semibold">Running Pro</h1>
-              <p className="text-xs">
+              <h1 className="text-md text-black font-semibold py-2">
+                Rosy apartment for rent
+              </h1>
+              <p className="text-sm">
                 {/* location */}
-                4, ikotun oshodi
+                4, Ikotun Oshodi Lagos Nigeria
               </p>
-              <p>{/* {desctiption} */}</p>
+              <p className="text-xs leading-relaxed pt-6">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                eum aspernatur, perferendis itaque sapiente ipsum optio ab sed
+                facere quas?
+              </p>
               <div>
-                {/* price */}
+                <p className="text-xs"> #24,000.00/month</p>
                 {/* button: show Contact */}
+                <button className=" text-blue-400  cursor-pointer mt-2 font-semibold text-xs">
+                  Contact Now →
+                </button>
               </div>
             </div>
           </div>
         </div>
         {/* show case */}
-        <div className="grid grid-cols-4">{/* featured rents */}</div>
+        <div className=" flex">
+          {/* featured rents */}
+          <div>house 1</div>
+        </div>
       </section>
     </Fragment>
   );
