@@ -4,7 +4,7 @@ import { Menu } from "../Hooks/custom";
 export const Footer = () => {
   return (
     <Fragment>
-      <footer className="flex justify-center px-4 text-gray-800 bg-white dark:text-white dark:bg-gray-900">
+      <footer className="flex justify-center px-4 text-gray-800 bg-white dark:text-white dark:bg-[#000]">
         <div className="container px-6 py-6">
           <h1 className="text-lg font-bold text-center lg:text-2xl">
             Join 31,000+ other and never miss <br /> out on new tips, tutorials,

@@ -4,22 +4,33 @@ import { ToggleMenu } from "./Buttons";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(!false);
-  const [scroll, setscroll] = useState(false);
+  const [scroll, setScroll] = useState();
 
   function scrollHandler() {
-    if (window.scrollY >= 20) {
-      setscroll(true);
+    switch (true) {
+      case window.scrollY >= 20:
+        setScroll(true);
+        break;
+
+      default:
+        setScroll(false);
     }
-    setscroll(false);
   }
 
   window.addEventListener("scroll", scrollHandler);
 
   return (
-    <header className={scroll ? "bg-white" : "bg-transparent"}>
+    <header
+      className={
+        scroll
+          ? "text-white bg-black fixed w-full z-50 shadow-md rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 border"
+          : " text-white fixed w-full z-50 "
+      }
+    >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
-        aria-label="Global"
+        className={
+          "mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        }
       >
         <div className="flex lg:flex-1  ">
           <a
@@ -34,24 +45,71 @@ export const Header = () => {
         <div className="flex lg:hidden">
           <ToggleMenu handleEvent={() => setMenuOpen(!menuOpen)} />
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-12 z-50 ">
           {Menu.map((value, key) => (
             <a
               href={value.url}
               key={key}
-              className="text-sm  leading-6 text-gray-900 transition-colors duration-300  hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
+              className={
+                scroll
+                  ? "text-sm  leading-6 text-white transition-colors duration-300  hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
+                  : "text-sm  leading-6 text-white transition-colors duration-300  hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
+              }
             >
               {value.name}
             </a>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="#"
-            className="text-sm font-semibold leading-6 text-gray-900 "
-          >
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          {scroll ? (
+            <a
+              href="#"
+              className={
+                scroll
+                  ? "text-sm font-normal leading-6 text-gray-900 "
+                  : "text-sm font-normal leading-6 text-white "
+              }
+            >
+              Log in <span aria-hidden="true">&rarr;</span>
+            </a>
+          ) : (
+            <div className="flex items-center mt-4 lg:mt-0">
+              <button
+                className="hidden mx-4 text-gray-600 transition-colors duration-300 transform lg:block dark:text-gray-200 hover:text-blue-400 dark:hover:text-blue-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
+                aria-label="show notifications"
+              >
+                <svg
+                  className="w-6 h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
+                    stroke="currentColor"
+                  />
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                className="flex items-center focus:outline-none"
+                aria-label="toggle profile dropdown"
+              >
+                <div className="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
+                  <img
+                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                    className="object-cover w-full h-full"
+                    alt="avatar"
+                  />
+                </div>
+
+                <h3 className="mx-2 text-gray-700 dark:text-gray-200 lg:hidden">
+                  Khatab wedaa
+                </h3>
+              </button>
+            </div>
+          )}
         </div>
       </nav>
       {/* <!-- Mobile menu, show/hide based on menu open state. --> */}
@@ -65,7 +123,7 @@ export const Header = () => {
         <div
           className={
             menuOpen
-              ? " fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+              ? "fixed inset-y-0 right-0 z-10 w-6/12 overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 overflow-none"
               : "hidden -z-10"
           }
         >
@@ -86,7 +144,7 @@ export const Header = () => {
                   <a
                     href={value.url}
                     key={key}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline leading-7 text-black hover:bg-gray-50"
                   >
                     {value.name}
                   </a>
