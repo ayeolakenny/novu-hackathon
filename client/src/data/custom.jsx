@@ -1,3 +1,13 @@
+import { createGlobalState } from "react-hooks-global-state";
+const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
+  cookies: "sdsdmssdsdsd",
+  user: {
+    email: "admin@gmail.com",
+    password: "admin",
+  },
+});
+
+export { useGlobalState, setGlobalState, getGlobalState };
 export const Menu = [
   { name: "About", url: "/" },
   { name: "Rent", url: "/rent" },
