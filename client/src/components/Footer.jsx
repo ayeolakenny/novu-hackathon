@@ -46,30 +46,12 @@ export const Footer = () => {
                     {value.name}
                   </a>
                 ))}
-                {/* <a
-                  href="#"
-                  className="px-4 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
-                >
-                  About
-                </a>
                 <a
-                  href="#"
+                  href="/create-account"
                   className="px-4 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
                 >
-                  Blog
+                  Register
                 </a>
-                <a
-                  href="#"
-                  className="px-4 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
-                >
-                  News
-                </a>
-                <a
-                  href="#"
-                  className="px-4 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
-                >
-                  Contact
-                </a> */}
               </div>
             </div>
           </div>

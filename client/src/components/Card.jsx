@@ -92,9 +92,9 @@ export const Card2 = () => {
     </div>
   );
 };
-export const FancyCard = ({ location }) => {
-  
+export const FancyCard = () => {
   const [featuredData, setFeaturedData] = useState();
+
   return (
     <Fragment>
       <section className="font-[Raleway] relative">
@@ -198,7 +198,7 @@ export const FancyCard = ({ location }) => {
               >
                 <img src={val.image} alt={"image"} className="w-full h-[80%]" />
                 <div className="truncate block">{val.title}</div>
-                {/* <div className="">{val.description}</div> */}
+               
               </div>
             </Fragment>
           ))}
@@ -208,6 +208,6 @@ export const FancyCard = ({ location }) => {
   );
 };
 
-FancyCard.PropType = {
-  location:PropTypes.func,
+FancyCard.propTypes = {
+  location: PropTypes.func,
 };
