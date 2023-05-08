@@ -5,6 +5,7 @@ import { ToggleMenu } from "./Buttons";
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(!false);
   const [scroll, setScroll] = useState();
+  const [islogged, setIslogged] = useState(false);
 
   function scrollHandler() {
     switch (true) {
@@ -34,7 +35,7 @@ export const Header = () => {
       >
         <div className="flex lg:flex-1  ">
           <a
-            href="#"
+            href="/"
             className="-m-1.5 p-1.5 flex align-center justify-center items-center"
           >
             <div className="material-icons md-36">villa</div>
@@ -61,9 +62,9 @@ export const Header = () => {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          {scroll ? (
+          {!islogged ? (
             <a
-              href="#"
+              href="/create-account"
               className={
                 scroll
                   ? "text-sm font-normal leading-6 text-gray-900 "
@@ -123,7 +124,7 @@ export const Header = () => {
         <div
           className={
             menuOpen
-              ? "fixed inset-y-0 right-0 z-10 w-6/12 overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 overflow-none"
+              ? "fixed inset-y-0 right-0 z-10 w-6/12 overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 overflow-none "
               : "hidden -z-10"
           }
         >
@@ -144,7 +145,7 @@ export const Header = () => {
                   <a
                     href={value.url}
                     key={key}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline leading-7 text-black hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base transition-colors duration-300  hover:text-blue-500 dark:hover:text-blue-400 hover:underline leading-7 text-black hover:bg-gray-50"
                   >
                     {value.name}
                   </a>

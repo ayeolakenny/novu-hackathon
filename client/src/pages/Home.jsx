@@ -6,9 +6,9 @@ export const Home = () => {
   return (
     <Fragment>
       <Hero />
-      <section className="relative h-screen z-20 lg:flex-col">
+      <section className="relative h-screen z-20 lg:flex-col ">
         <Map />
-        <span className="absolute top-10 z-50 left-5 bg-white rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 shadow-lg w-4/12 ">
+        <span className="absolute w-[500px] top-10 z-50 left-5 bg-blue-900 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 shadow-2xl  overflow-hidden">
           <FancyCard />
         </span>
       </section>
