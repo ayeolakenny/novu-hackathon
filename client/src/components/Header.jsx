@@ -5,7 +5,7 @@ import { ToggleMenu } from "./Buttons";
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(!false);
   const [scroll, setScroll] = useState();
-  const [islogged, setIslogged] = useState(false);
+  const [islogged] = useState(false);
 
   function scrollHandler() {
     switch (true) {
@@ -25,7 +25,7 @@ export const Header = () => {
       className={
         scroll
           ? "text-white bg-black fixed w-full z-50 shadow-md rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 border"
-          : " text-white fixed w-full z-50 "
+          : " text-white fixed w-full z-50 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 border"
       }
     >
       <nav

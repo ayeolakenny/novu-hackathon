@@ -7,7 +7,7 @@ export const Layout = ({ children }) => {
   return (
     <Fragment>
       <Header />
-      {children}
+      <section className="relative h-full z-auto">{children}</section>
       <Footer />
     </Fragment>
   );
