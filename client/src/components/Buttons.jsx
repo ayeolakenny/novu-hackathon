@@ -24,7 +24,7 @@ export const ToggleMenu = ({ handleEvent, isOpen }) => {
       {!isOpen ? (
         <button
           type="button"
-          className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-blue-700 z-50"
           onClick={handleEvent}
         >
           <span className="sr-only">Open main menu</span>
@@ -46,7 +46,7 @@ export const ToggleMenu = ({ handleEvent, isOpen }) => {
       ) : (
         <button
           type="button"
-          className="-m-2.5 rounded-md p-2.5 text-gray-700"
+          className="-m-2.5 rounded-md p-2.5 text-blue-700 z-50"
           onClick={handleEvent}
         >
           <span className="sr-only">Close menu</span>

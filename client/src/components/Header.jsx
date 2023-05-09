@@ -3,7 +3,7 @@ import { Menu } from "../data/custom";
 import { ToggleMenu } from "./Buttons";
 
 export const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(!false);
+  const [menuOpen, setMenuOpen] = useState(true);
   const [scroll, setScroll] = useState();
   const [islogged] = useState(false);
 
@@ -24,8 +24,8 @@ export const Header = () => {
     <header
       className={
         scroll
-          ? "text-white bg-black fixed w-full z-50 shadow-md rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 border"
-          : " text-white fixed w-full z-50 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 border"
+          ? "text-white bg-black fixed w-full z-50 shadow-md rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 "
+          : " text-white fixed w-full bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-0 z-50"
       }
     >
       <nav
@@ -43,8 +43,12 @@ export const Header = () => {
             <div className="ile"> Ile</div>
           </a>
         </div>
-        <div className="flex lg:hidden">
-          <ToggleMenu handleEvent={() => setMenuOpen(!menuOpen)} />
+        <div className="flex lg:hidden z-50">
+          {menuOpen ? (
+            <ToggleMenu handleEvent={() => setMenuOpen(!menuOpen)} />
+          ) : (
+            ""
+          )}
         </div>
         <div className="hidden lg:flex lg:gap-x-12 z-50 ">
           {Menu.map((value, key) => (
@@ -115,7 +119,7 @@ export const Header = () => {
       </nav>
       {/* <!-- Mobile menu, show/hide based on menu open state. --> */}
       <div
-        className={menuOpen ? "lg:hidden " : "hidden"}
+        className={!menuOpen ? "lg:hidden " : "hidden"}
         role="dialog"
         aria-modal="true"
       >
@@ -123,8 +127,8 @@ export const Header = () => {
         <div className="fixed inset-0 z-10"></div>
         <div
           className={
-            menuOpen
-              ? "fixed inset-y-0 right-0 z-10 w-6/12 overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 overflow-none "
+            !menuOpen
+              ? "fixed inset-y-0 right-0 z-50 w-6/12 h-screen overflow-y-auto  px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-white"
               : "hidden -z-10"
           }
         >
