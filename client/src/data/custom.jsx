@@ -1,8 +1,21 @@
+import { createGlobalState } from "react-hooks-global-state";
+const { setGlobalState, useGlobalState, getGlobalState } = createGlobalState({
+  cookies: "sdsdmssdsdsd",
+  user: {
+    fullname:"Samuel Peters",
+    email: "admin@gmail.com",
+    password: "admin",
+    confirm_password: "admin",
+
+  },
+});
+
+export { useGlobalState, setGlobalState, getGlobalState };
 export const Menu = [
   { name: "About", url: "/" },
   { name: "Rent", url: "/rent" },
   { name: "Listing", url: "/listing" },
-  { name: "Contact", url: "/contact" },
+  { name: "Contact us", url: "/contact" },
 ];
 
 export const MapData = [
