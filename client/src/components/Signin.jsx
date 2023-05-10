@@ -1,9 +1,33 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Input } from "./Form";
-// import { useGlobalState, getGlobalState } from "../data/custom";
+import PropTypes from "prop-types";
+import { useGlobalState, getGlobalState } from "../data/custom";
 export const Signin = () => {
   const [Register, setRegister] = useState(true);
-  // const oldAccount = getGlobalState("user");
+  const cookies = getGlobalState("cookies");
+  const [user, setUser] = useGlobalState("user");
+  console.log(user);
+  const { fullname, email, password, confirm_paassword } = user;
+  function CreateAccount() {
+    switch (true) {
+      case fullname === "":
+        console.log("Fullname cannot be empty");
+        break;
+      case email === "":
+        console.log(" Email cannot be empty");
+        break;
+      case password === "":
+        console.log("Password cannot be empty");
+        break;
+      case confirm_paassword !== password:
+        console.log(" Confirm Password Doesnt Match");
+        break;
+
+      default:
+        console.log(user);
+        break;
+    }
+  }
 
   return (
     <Fragment>
@@ -128,21 +152,50 @@ export const Signin = () => {
               {Register ? (
                 <form action="#" method="POST" className="mt-8">
                   <div className="space-y-5">
-                    <Input name="Full Name " type="text" label="Full Name" />
-                    <Input name="Email " type="email" label="Email" />
+                    <Input
+                      name="Full Name "
+                      type="text"
+                      label="Full Name"
+                      value={user.fullname}
+                      handleEvent={(e) => {
+                        setUser({ ...user, fullname: e.target.value });
+                      }}
+                    />
+                    <Input
+                      name="Email "
+                      type="email"
+                      label="Email"
+                      value={user.email}
+                      handleEvent={(e) => {
+                        setUser({ ...user, email: e.target.value });
+                      }}
+                    />
 
-                    <Input name="Password " type="password" label="Password" />
+                    <Input
+                      name="Password "
+                      type="password"
+                      label="Password"
+                      value={user.password}
+                      handleEvent={(e) => {
+                        setUser({ ...user, password: e.target.value });
+                      }}
+                    />
 
                     <Input
                       name="confirm Password "
                       type="password"
                       label="confirm Password"
+                      value={user.confirm_password}
+                      handleEvent={(e) => {
+                        setUser({ ...user, confirm_password: e.target.value });
+                      }}
                     />
 
                     <div>
                       <button
                         type="button"
                         className="inline-flex w-full items-center justify-center rounded-md bg-blue-600 px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-blue-700"
+                        onClick={CreateAccount}
                       >
                         Create Account{" "}
                         <svg
@@ -215,4 +268,8 @@ export const Signin = () => {
       </section>
     </Fragment>
   );
+};
+
+Signin.propTypes = {
+  user: PropTypes.object,
 };

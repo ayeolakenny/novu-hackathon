@@ -5,8 +5,10 @@ import { Home } from "./pages/Home";
 import { Account } from "./pages/Account";
 import { Protected } from "./components/Protected";
 import Dashboard from "./pages/Dashboard";
+import { useGlobalState } from "./data/custom";
 
 function App() {
+  const user = useGlobalState("user");
   return (
     <Fragment>
       <BrowserRouter>
@@ -17,8 +19,8 @@ function App() {
             <Route
               path="/dashboard"
               element={
-                <Protected>
-                  <Dashboard email={"petsamuel4@gmail.com"}/>
+                <Protected isLoggedIn={user ? true : false}>
+                  <Dashboard user={user} />
                 </Protected>
               }
             />

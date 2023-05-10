@@ -5,7 +5,7 @@ import { Button } from "./Buttons";
 export const Footer = () => {
   return (
     <Fragment>
-      <footer className="flex justify-center px-4 text-gray-800 bg-white dark:text-white dark:bg-[#000] z-auto">
+      <footer className="flex justify-center px-4 text-white bg-black  z-auto">
         <div className="container px-6 py-6">
           <h1 className="text-lg font-bold text-center lg:text-2xl">
             Join 31,000+ other and never miss <br /> out on new listings,
@@ -41,7 +41,7 @@ export const Footer = () => {
                   <a
                     href={value.url}
                     key={key}
-                    className="px-4 text-sm   text-gray-900 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
+                    className="px-4 text-sm   text-white transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
                   >
                     {value.name}
                   </a>
